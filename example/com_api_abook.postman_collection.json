@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "774d4b80-8a34-424e-b1f8-892f12091fb7",
+		"name": "com_api_abook",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get categories",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "<token here>"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1/index.php?option=com_api&app=abook&resource=categories&title=ROOT",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "option",
+							"value": "com_api"
+						},
+						{
+							"key": "app",
+							"value": "abook"
+						},
+						{
+							"key": "resource",
+							"value": "categories"
+						},
+						{
+							"key": "title",
+							"value": "ROOT"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put category",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "<token here>"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\" : {\n            \"title\" : \"bar2\",\n            \"parent_id\" : \"2\",\n            \"extension\" : \"com_abook\",\n            \"published\" : \"1\"\n    }\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1/index.php?option=com_api&app=abook&resource=category",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "option",
+							"value": "com_api"
+						},
+						{
+							"key": "app",
+							"value": "abook"
+						},
+						{
+							"key": "resource",
+							"value": "category"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
