@@ -5,10 +5,10 @@ defined('_JEXEC') or die();
 JTable::addIncludePath(JPATH_ADMINISTRATOR . '/components/com_abook/tables');
 
 
-class AbookApiResourceCategories extends ApiResource
+class AbookApiResourceBooks extends ApiResource
 { 
     public function get(){
-        $table =  JTable::getInstance("Category", "AbookTable", array());
+        $table =  JTable::getInstance("Book", "AbookTable", array());
         $input = JFactory::getApplication()->input;
         $db = $table->getDbo();
         $query = $db->getQuery(true);

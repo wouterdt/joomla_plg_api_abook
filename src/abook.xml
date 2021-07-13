@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.0.0" type="plugin" group="api" method="upgrade">
     <name>Alexandria Library API plugin</name>
-    <version>0.1</version>
+    <version>1.1</version>
     <creationDate>10/07/2021</creationDate>
     <author></author>
     <description></description>
