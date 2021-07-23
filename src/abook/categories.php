@@ -36,7 +36,10 @@ class AbookApiResourceCategories extends ApiResource
        $db->setQuery($query);
        $results = $db->loadObjectList();
        if (!$results){
-            ApiError::raiseError(12001, "not found", 'APINotFoundException');
+            //throw new APINotFoundException();
+            // Undefined property: Exception::$http_code in /var/www/html/components/com_api/controllers/http.php on line 88 => weird
+            ApiError::raiseError(404, "requested category was not found", 'APINotFoundException');
+            
        }
        $this->plugin->setResponse($results);
     }
