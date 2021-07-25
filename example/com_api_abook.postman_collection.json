@@ -6,99 +6,361 @@
 	},
 	"item": [
 		{
-			"name": "get categories",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "<token here>"
-					}
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://127.0.0.1/index.php?option=com_api&app=abook&resource=categories&title=ROOT",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"path": [
-						"index.php"
-					],
-					"query": [
-						{
-							"key": "option",
-							"value": "com_api"
+			"name": "categories",
+			"item": [
+				{
+					"name": "get categories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "<token>",
+								"password": "{{token}}"
+							}
 						},
-						{
-							"key": "app",
-							"value": "abook"
-						},
-						{
-							"key": "resource",
-							"value": "categories"
-						},
-						{
-							"key": "title",
-							"value": "ROOT"
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://<endpoint>/index.php?option=com_api&app=abook&resource=categories&title=ROOT",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"2",
+								"103"
+							],
+							"path": [
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "option",
+									"value": "com_api"
+								},
+								{
+									"key": "app",
+									"value": "abook"
+								},
+								{
+									"key": "resource",
+									"value": "categories"
+								},
+								{
+									"key": "title",
+									"value": "ROOT"
+								}
+							]
 						}
-					]
+					},
+					"response": []
+				},
+				{
+					"name": "put category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "<token>",
+								"password": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"title\": \"tweelevel22\",\n        \"parent_id\": \"163\",\n        \"extension\": \"com_abook\",\n        \"published\": \"1\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://<endpoint>/index.php?option=com_api&app=abook&resource=category",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"2",
+								"103"
+							],
+							"path": [
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "option",
+									"value": "com_api"
+								},
+								{
+									"key": "app",
+									"value": "abook"
+								},
+								{
+									"key": "resource",
+									"value": "category"
+								}
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "put category",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "<token here>"
-					}
-				},
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"data\" : {\n            \"title\" : \"bar2\",\n            \"parent_id\" : \"2\",\n            \"extension\" : \"com_abook\",\n            \"published\" : \"1\"\n    }\n\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://127.0.0.1/index.php?option=com_api&app=abook&resource=category",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"path": [
-						"index.php"
-					],
-					"query": [
-						{
-							"key": "option",
-							"value": "com_api"
+			"name": "books",
+			"item": [
+				{
+					"name": "put book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "<token>",
+								"password": "{{token}}"
+							}
 						},
-						{
-							"key": "app",
-							"value": "abook"
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\" : {\n            \"title\" : \"bar2\",\n            \"parent_id\" : \"2\",\n            \"extension\" : \"com_abook\",\n            \"published\" : \"1\"\n    }\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
-						{
-							"key": "resource",
-							"value": "category"
+						"url": {
+							"raw": "http://<endpoint>/index.php?option=com_api&app=abook&resource=category",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"2",
+								"103"
+							],
+							"path": [
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "option",
+									"value": "com_api"
+								},
+								{
+									"key": "app",
+									"value": "abook"
+								},
+								{
+									"key": "resource",
+									"value": "category"
+								}
+							]
 						}
-					]
+					},
+					"response": []
+				},
+				{
+					"name": "get Books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
+		},
+		{
+			"name": "authors",
+			"item": [
+				{
+					"name": "put author",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "<token>",
+								"password": "{{token}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\" : {\n            \"lastname\" : \"bar2\",\n            \"published\" : \"1\"\n    }\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://<endpoint>/index.php?option=com_api&app=abook&resource=author",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"2",
+								"103"
+							],
+							"path": [
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "option",
+									"value": "com_api"
+								},
+								{
+									"key": "app",
+									"value": "abook"
+								},
+								{
+									"key": "resource",
+									"value": "author"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get authors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://<endpoint>/index.php?option=com_api&app=abook&resource=authors&lastname=test",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"2",
+								"103"
+							],
+							"path": [
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "option",
+									"value": "com_api"
+								},
+								{
+									"key": "app",
+									"value": "abook"
+								},
+								{
+									"key": "resource",
+									"value": "authors"
+								},
+								{
+									"key": "lastname",
+									"value": "test"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "locations",
+			"item": [
+				{
+					"name": "put location",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "<token>",
+								"password": "{{token}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\" : {\n            \"name\" : \"locationbar2\",\n            \"published\" : \"1\"\n    }\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://<endpoint>/index.php?option=com_api&app=abook&resource=location",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"2",
+								"103"
+							],
+							"path": [
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "option",
+									"value": "com_api"
+								},
+								{
+									"key": "app",
+									"value": "abook"
+								},
+								{
+									"key": "resource",
+									"value": "location"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get locations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://<endpoint>/index.php?option=com_api&app=abook&resource=locations&lastname=locationbar2",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"2",
+								"103"
+							],
+							"path": [
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "option",
+									"value": "com_api"
+								},
+								{
+									"key": "app",
+									"value": "abook"
+								},
+								{
+									"key": "resource",
+									"value": "locations"
+								},
+								{
+									"key": "lastname",
+									"value": "locationbar2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
