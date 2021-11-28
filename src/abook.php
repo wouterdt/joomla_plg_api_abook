@@ -16,5 +16,6 @@ class PlgAPIAbook extends ApiPlugin
         $this->setResourceAccess('categories', 'public', 'get');
         $this->setResourceAccess('books', 'public', 'get');
         $this->setResourceAccess('authors', 'public', 'get');
+        $this->setResourceAccess('locations', 'public', 'get');
     }
 }
