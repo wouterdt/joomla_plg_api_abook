@@ -5,7 +5,7 @@ defined('_JEXEC') or die();
 JTable::addIncludePath(JPATH_ADMINISTRATOR . '/components/com_abook/tables');
 
 
-class AbookApiResourceTag extends ApiResource
+class AbookApiResourceTags extends ApiResource
 { 
     public function get(){
         $table =  JTable::getInstance("Tag", "AbookTable", array());
@@ -38,7 +38,7 @@ class AbookApiResourceTag extends ApiResource
        if (!$results){
             //throw new APINotFoundException();
             // Undefined property: Exception::$http_code in /var/www/html/components/com_api/controllers/http.php on line 88 => weird
-            ApiError::raiseError(404, "requested Author was not found", 'APINotFoundException');
+            ApiError::raiseError(404, "requested Tag was not found", 'APINotFoundException');
             
        }
        $this->plugin->setResponse($results);

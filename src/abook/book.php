@@ -56,7 +56,24 @@ class AbookApiResourceBook extends ApiResource
 
 
             }
-            $this->plugin->setResponse($query->dump());
+
+            foreach($json['taglist'] as &$value ){
+                $query2 = $db->getQuery(true);
+                $columns = array('idbook', 'idtag');
+                $values = array($id,$value);
+                $query2
+                    ->insert($db->quoteName('#__abbooktag'))
+                    ->columns($db->quoteName($columns))
+                    ->values(implode(',', $values));
+                $db->setQuery($query2);
+                $db->execute();
+                $ordercounter++;
+
+
+            }
+
+
+            $this->plugin->setResponse($result);
         }
         else{
             $this->plugin->setResponse($table->getError());
